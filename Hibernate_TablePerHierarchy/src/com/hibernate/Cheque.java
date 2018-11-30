@@ -12,5 +12,7 @@ public class Cheque extends Payment {
 		this.chequeType = chequeType;
 	}
 
-	
 }
+
+
+

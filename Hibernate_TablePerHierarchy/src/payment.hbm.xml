@@ -5,24 +5,30 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
     
     <hibernate-mapping>
+    
     <class name="com.hibernate.Payment" table="payment">
     <id name="paymentId">
     <generator class="increment"></generator>
     </id>
-    <discriminator column="dcolumn"></discriminator>
+    <discriminator column="payment_type"></discriminator>
     <property name="amount"></property>
     
     <subclass name="com.hibernate.Cheque" discriminator-value="cheque">
-    <property name="chequeType" column="cheque"></property>
+    <property name="chequeType" column="cheque_details"></property>
     </subclass>
     
     <subclass name="com.hibernate.CreditCard" discriminator-value="creditcard">
-    <property name="creditCardType" column="creditcard"></property>
+    <property name="creditCardType" column="creditcard_details"></property>
     </subclass>
     
     </class>
     
-    
-    
-    
     </hibernate-mapping>
+    
+    
+    
+    
+    
+    
+    
+    
