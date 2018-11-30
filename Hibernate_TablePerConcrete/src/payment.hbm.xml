@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+    <hibernate-mapping>
+    
+    <class name="com.hibernate.Payment" table="payment1">
+    <id name="paymentId" column="pid">
+    <generator class="increment"></generator>
+    </id>   
+    <property name="amount"></property>
+    
+    <union-subclass name="com.hibernate.Cheque" table="cheque2">
+    <property name="chequeType" column="chequetype"></property>
+    </union-subclass>
+    
+    <union-subclass name="com.hibernate.CreditCard" table="creditcard2">
+    <property name="creditCardType" column="creditcardtype"></property>
+    </union-subclass>
+       
+    </class>
+    
+    </hibernate-mapping>
+    
+    
+    
+    
+    
+    
+    
+    
